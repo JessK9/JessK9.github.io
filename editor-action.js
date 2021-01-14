@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    var codeEditorElement = $(".textarea")[0];
+/*$(document).ready(function(){
+    var codeEditorElement = document.getElementById('code-editor').value;
     var editor = CodeMirror.fromTextArea(codeEditorElement, {
         mode: "application/x-httpd-php",
         lineNumbers: true,
@@ -41,3 +41,4 @@ $(document).ready(function(){
 
     });
 });
+*/
