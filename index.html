@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Code Editor</title>
+    </head>
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
+<div class="row">
+    <textarea class="textarea" id="code-editor"></textarea>
+    <div class="app-row">
+        <button class="btn-action" id="run">Run</button>
+        <button class="btn-action" id="clear">Clear</button>
+        <button class="btn-action" id="refresh">Refresh</button><span id="error"></span>
+    </div>
+</div>
+<div class="app-row">	
+  <div id="result"></div>
+</div>	
 </body>
 </html>
