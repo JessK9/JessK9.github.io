@@ -1,7 +1,14 @@
 $(document).ready(function(){
     var codeEditorElement = $(".textarea")[0];
-    var code = document.getElementById("code-editor").value;
-
+    var editor = CodeMirror.fromTextArea(codeEditorElement, {
+        mode: "application/x-httpd-php",
+        lineNumbers: true,
+        matchBrackets: true,
+        theme: "ambiance",
+        lineWiseCopyCut: true,
+        undoDepth: 200
+      });
+      editor.setValue('<?php\necho "Hello World!"\n?>');
     $(document).on('click', '#run', function() {
         $("#error").html("").hide();
         var editorCode = code.getValue();
