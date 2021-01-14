@@ -6,11 +6,11 @@
         <script src="editor-action.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
 
-        <script src="lib/jQuery/jQuery.js"></script>
-        <script src="lib/codemirror/lib/codemirror.js"></script>
+        <script src="lib/codemirror.js"></script>
+        <script src="codemirror/jQuery/jQuery.js"></script>
+        <script src="codemirror/mode/javascript/javascript.js"></script>
         <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
         <script src="codemirror/mode/xml/xml.js"></script>
-        <script src="codemirror/mode/javascript/javascript.js"></script>
         <script src="codemirror/mode/css/css.js"></script>
         <script src="codemirror/mode/clike/clike.js"></script>
         <script src='codemirror/mode/php/php.js'></script>
@@ -21,17 +21,16 @@
         </head>
 <body>
 
-<div class="row">
-
-    <textarea class="textarea" id="code-editor"></textarea>
+<div class="code-area">
+    <textarea id="code-editor"></textarea>
     <div class="app-row">
         <button class="btn-action" id="run">Run</button>
         <button class="btn-action" id="clear">Clear</button>
         <button class="btn-action" id="refresh">Refresh</button><span id="error"></span>
     </div>
 </div>
-<div class="app-row">	
-  <div id="result"></div>
+<div class="preview-area">	
+  <iframe id="preview-window"></iframe>
 </div>	
 </body>
 </html>
