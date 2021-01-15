@@ -1,14 +1,18 @@
 <?php
-define('DB_SERVER', 'localhost');
+define('DB_SERVER', 'localhost:3036');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'Humphrey01$');
-define('DB_NAME', 'userDetails');
+define('DB_DATABASE', 'userDetails');
 /*connect to the MySQL database*/
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 //check the connection
+/*
+
 if($link === false) {
     die("ERROR: could not connect " . mysqli_connect_error());
 }
+
+echo 'Something worked!';
 
 if(!isset($_POST['fname'], $_POST['lname'], $_POST['email'])) {
     exit('please fill in the fields');
@@ -28,4 +32,5 @@ if($stmt = $con->prepare('SELECT userID, firstName FROM user WHERE emailAddress 
     }
 	$stmt->close();
 }
+*/
 ?>
