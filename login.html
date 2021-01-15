@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,14 +11,18 @@
        
         </head>
 <body>
-	<form action="login-action.php">  <!--when submit is clicked the data is sent to login-action.php page-->
+	<form action="login-action.php" method="post">  <!--when submit is clicked the data is sent to login-action.php page-->
         <label for="fname">First name:</label>
         <br>
-        <input type="text" id="fname" name="fname" value="Enter your first name here"> 
+        <input type="text" id="fname" name="fname"> 
         <br>
         <label for="lname">Last name:</label>
         <br>
-        <input type="text" id="lname" name="lname" value="Enter your last name here">
+        <input type="text" id="lname" name="lname">
+        <br>
+        <label for="email">Email address:</label>
+        <br>
+        <input type="text" id="email" name="email">
         <br>
         <br>
         <input type="submit" value="submit">
