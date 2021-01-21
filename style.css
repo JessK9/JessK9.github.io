@@ -22,3 +22,9 @@ body {
     display:none;
     color: #d63f3f;
 }
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

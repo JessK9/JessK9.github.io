@@ -6,7 +6,7 @@ define('DB_DATABASE', 'userDetails');
 /*connect to the MySQL database*/
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 //check the connection
-/*
+
 
 if($link === false) {
     die("ERROR: could not connect " . mysqli_connect_error());
@@ -32,5 +32,5 @@ if($stmt = $con->prepare('SELECT userID, firstName FROM user WHERE emailAddress 
     }
 	$stmt->close();
 }
-*/
+
 ?>
