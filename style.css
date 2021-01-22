@@ -1,6 +1,10 @@
 body {
     font-family: Arial;
 }
+p, h3 {
+    margin-left: 20%;
+    margin-right: 20%;
+}
 .btn-action {    
     background: #1f201f;
     padding: 8px 25px;
@@ -28,11 +32,31 @@ ul{
   margin: 0;
   padding: 0;
   width: 200px;
+  float: left;
   background-color: #f1f1f1;
 }
 
 li{
     display: inline;
+}
+
+.code{
+    border-top:2px black;
+}
+.code-area {
+    height:200px;
+    right:0;
+    position:absolute;
+    bottom: 100px;
+
+   
+}
+.preview-area {
+    height:200px;
+    right:10px;
+	position: absolute;
+    
+    bottom: 0;
 }
 
 li a {

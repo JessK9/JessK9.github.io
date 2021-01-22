@@ -6,23 +6,29 @@
         </head>
 <body>
     <ul>
+        <li><a href="index.html">Home Page</a></li>
         <li><a href="introductionToPHP.html">Introduction to PHP</a></li>
+        <li><a href="introductionToHTML.html">Introduction to HTML</a></li>
+        <li><a href="introductionToCSS.html">Introduction to CSS</a></li>
+
+
     </ul>
     <form action="login.php">
         <input type="submit" value="Login Here"/>
     </form>
    
-
-<div class="code-area">
-    <textarea id="code-editor"></textarea>
-    <div class="app-row">
-        <button class="btn-action" id="run">Run</button>
-        <button class="btn-action" id="clear">Clear</button>
-        <button class="btn-action" id="refresh">Refresh</button><span id="error"></span>
+<div id="code">
+    <div class="code-area">
+        <textarea id="code-editor"></textarea>
+        <div class="app-row">
+            <button class="btn-action" id="run">Run</button>
+            <button class="btn-action" id="clear">Clear</button>
+            <button class="btn-action" id="refresh">Refresh</button><span id="error"></span>
+        </div>
+    </div>
+    <div class="preview-area">	
+    <iframe id="preview-window"></iframe>
     </div>
 </div>
-<div class="preview-area">	
-  <iframe id="preview-window"></iframe>
-</div>	
 </body>
 </html>
