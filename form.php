@@ -4,6 +4,7 @@ $comment = null;
 // if submit pressed and its not empty
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['editor'])) {
     $comment = $_POST['editor'];
+    
 
 }
 // need something for if it is empty
@@ -19,21 +20,26 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['editor'])) {
         <link rel="stylesheet" href="codemirror/lib/codemirror.css">
         <script src="codemirror/mode/javascript/javascript.js"></script>
         <script src="codemirror/mode/xml/xml.js"></script>
+        <script src="codemirror/mode/clike/clike.js"></script>
         <script src="codemirror/mode/php/php.js"></script>
         <link href="codemirror/theme/dracula.css" rel="stylesheet"/>
         <script src="codemirror/addon/edit/closetag.js"></script>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+    
     </head>
     <body>
         <form id="preview-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <textarea class="textarea" name="editor" id="editor"><?php echo $comment; ?></textarea>
-            <script>
+            <textarea class="textarea" name="editor" id="editor"><?php print '<'.'?php' ."\n";
+  echo 'e'.'cho' . ' "Hello World!";' . "\n"; ?></textarea>
+            <script type="text/javascript">
             var editor = CodeMirror.fromTextArea
             (document.getElementById('editor'), {
                 mode: "xml",
                 theme: "dracula",
                 lineNumbers: true,
-                autoCloseTags: true
+                
             }); 
         </script>
             <br>
