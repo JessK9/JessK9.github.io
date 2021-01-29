@@ -43,7 +43,7 @@ li{
 .code{
     border-top:2px black;
 }
-.code-area {
+.editor {
     height:200px;
     right:0;
     position:absolute;

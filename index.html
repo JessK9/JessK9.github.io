@@ -3,6 +3,14 @@
     <head>
         <title>Main Page</title>
        <link rel="stylesheet" href="style.css">
+       <script src="codemirror/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+        <script src="codemirror/mode/javascript/javascript.js"></script>
+        <script src="codemirror/mode/xml/xml.js"></script>
+        <link href="codemirror/theme/dracula.css" rel="stylesheet"/>
+        <script src="codemirror/addon/edit/closetag.js"></script>
+   
+
         </head>
 <body>
     <ul>
@@ -19,7 +27,17 @@
    
 <div id="code">
     <div class="code-area">
-        <textarea id="code-editor"></textarea>
+        <textarea id="editor"> <p>I am a paragraph</p> </textarea>
+        <script>
+            var editor = CodeMirror.fromTextArea
+            (document.getElementById('editor'), {
+                mode: "xml",
+                theme: "dracula",
+                lineNumbers: true,
+                autoCloseTags: true
+            }); 
+            
+        </script>
         <div class="app-row">
             <button class="btn-action" id="run">Run</button>
             <button class="btn-action" id="clear">Clear</button>
