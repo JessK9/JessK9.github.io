@@ -3,9 +3,9 @@ $comment = null;
 
 // if submit pressed and its not empty
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['editor'])) {
+    //want to do something here to recognise and implement the PHP as well as HTML
     $comment = $_POST['editor'];
     
-
 }
 // need something for if it is empty
 ?>
@@ -31,8 +31,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['editor'])) {
     </head>
     <body>
         <form id="preview-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <textarea class="textarea" name="editor" id="editor"><?php print '<'.'?php' ."\n";
-  echo 'e'.'cho' . ' "Hello World!";' . "\n"; ?></textarea>
+            <textarea class="textarea" name="editor" id="editor"></textarea>
             <script type="text/javascript">
             var editor = CodeMirror.fromTextArea
             (document.getElementById('editor'), {
@@ -40,12 +39,18 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['editor'])) {
                 theme: "dracula",
                 lineNumbers: true,
                 
-            }); 
+            });
+            
         </script>
             <br>
+            <button class="btn-action" id="run">Run</button>
             <input type="submit" name="preview-form-submit" id = "preview-form-submit" value = "Submit">
         </form>
-        <div id="preview-comment"><?php echo $comment; ?></div>
+        <div id="preview-comment">
+            <?php 
+            echo $comment; 
+            ?>
+        </div> <!--the result is displayed here -->
         <div id="code">
         <form id="preview-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     
