@@ -18,7 +18,8 @@
     </head>
     <body>
     <div class="header">
-        <h1>PHP self-tutor </h1>
+        <h1>PHP data types </h1>
+        <p>Like all programming languages there are many forms of data that PHP supports </p>
 </div>
 <ul>
 <li><a href="form.php">Home Page</a></li>

@@ -44,7 +44,8 @@
     </ul>
     <div class="float-container">
         <div class="float-child">
-        <h2>Starting a PHP project </h2>
+        <h2>Scope </h2>
+        <p>It is important to understand what scope means and how variables are affected by scopes. </p>
             
             
 </div>

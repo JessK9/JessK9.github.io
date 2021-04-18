@@ -112,7 +112,10 @@
                                     url: 'readCode.php',
                                     type: "GET",
                                     success:function(response) {
+                                        
                                         $('#result').html(response);
+                                        
+                                        
                                     }
                                 })
                             }

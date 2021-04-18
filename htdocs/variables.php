@@ -45,6 +45,16 @@
     <div class="float-container">
         <div class="float-child">
         <h2>PHP variables </h2>
+        <h3> What is a variable? </h3>
+        <p>In programming a variable is used to store one or multiple values, they are useful when you want to store the result of a function, equation, calulation
+        or more and then want to use that value in another part of the program. So far all of the code examples have just been compiling and displaying code however 
+        there is much more you can do.
+        </p>
+        <p> In order to tell the compiler that you are creating a PHP variable, it must start with a $ sign and then the desired name of the variable. The variable name is 
+        usually associated with the value it is holding, so in the example below $firstName holds the name Mary and $lastName holds the name Smith. When using echo to print the 
+        result of variables instead of a string, there is no need for a '='.
+        </p>
+
             
             
 </div>
@@ -59,15 +69,15 @@
   </div>
       
             <script type="text/javascript" >
-           
+            var hi = 6;
             $(document).ready(function() {
                 var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
-                mode: "application/x-httpd-php",
+                mode: "php",
                 theme: "dracula",
                 lineNumbers: true });
                 editor.setSize(700,200);
-
-                editor.setValue('');
+                
+                editor.setValue("<?php\n$firstName = 'Mary';\n$lastName = 'Smith';\necho $firstName;\n?>");
 
                 $(document).on('click','#run', function()
                 {
