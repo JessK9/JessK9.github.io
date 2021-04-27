@@ -2,8 +2,6 @@
 <html>
     <head>
         <title>Introduction to PHP</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="PHP self-tutor">
         <link rel="stylesheet" href="style.css">
         <script src="codemirror/lib/codemirror.js"></script>
         <link rel="stylesheet" href="codemirror/lib/codemirror.css"> 
@@ -21,7 +19,6 @@
     <body>
     <div class="header">
         <h1>PHP self-tutor </h1>
-        
 </div>
 <ul>
 <li><a href="form.php">Home Page</a></li>
@@ -47,44 +44,47 @@
     </ul>
     <div class="float-container">
         <div class="float-child">
-        <h1>PHP data types </h1>
-        <p>Like all programming languages there are many forms of data that PHP supports.</p>
-        <h2>String</h2>
-        <p>A string is one or more letters or characters and are enclosed in single quotatoes, however to specify a simgle quote then it needs to be escaped
-        using a backslash.</p>
-        <h2>Integer</h2>
-        <p> Unlike strings which are characters, integers are numbers that can be deimals, hxadecimals, octals or binaries. They can also be
-        negative numebrs however they do not have any decimal points</p>
-        <h2>Floating points </h2>
-        <p>Floating point numbers can contain decimal points, they can also just be integers stored as a float. </p>
-        <p> </p>
-        <p>The code editor is displaying $string, and then br indicates a new line break. Below that is a
-        function 'var_dump' which will essentially dump information about a variable and 'is_int' is a boolean which will 
-        return true if $int is an integer, or false if it is not an integer. Have a go changing the value of $int.</p>
-
+        <h2>Conditional statements</h2>
+        <p>Conditional statements are used when you want to change the value of a variable and have different actions for different conditions. Here, 'if' statements are used 
+            that tell the compiler to run a piece of code if the result of the statement is true. If it is not true, then the nested code is skipped and it is possible to have 
+            if statements followed by many other if statements although commonly after an if statement is an 'else if' statement. This second else if statement is run if the first if 
+            statement is not true and it can either have an expression but it does not need an expression to work.
+        </p>
+        <div class="codeEditorDiv">
+                <textarea class="textarea" name="editor1" id="editor1"></textarea>
+                <button class="button" id="run1">Run</button>
+                <div id="result1"></div>
             
+        <h2>Switch statements</h2>
+        <p>A switch statement is used to control the value of a variable and allows it to be changed during program execution 
+            depending on pre-defined cases. It works similar to conditional statements however rather than evaluating the conditions required 
+            for an if-else chain, the switch immediately jumps to the case. Switch statements can also be used for more than two alternatives, whilst if-else are 
+            normally only used for two and it takes much longer for execution if multiple if-else statements are used compared to switch statements.
+        </p>
+        <div class="codeEditorDiv">
+                <textarea class="textarea" name="editor" id="editor"></textarea>
+                <button class="button" id="run">Run</button>
+                <div id="result"></div>
+       
             
 </div>
 
     
         <!--<form id="preview-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> -->
-            <div class="codeEditorDiv">
-                <textarea class="textarea" name="editor" id="editor"></textarea>
-                <button class="button" id="run">Run</button>
-                <div id="result"></div>
-            </div>
+           
+            
   </div>
       
             <script type="text/javascript" >
-           
+            var hi = 6;
             $(document).ready(function() {
                 var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
-                mode: "application/x-httpd-php",
+                mode: "php",
                 theme: "dracula",
                 lineNumbers: true });
                 editor.setSize(700,200);
-
-                editor.setValue('<?php\n$string = "This is a string";\necho $string;\necho "<br>";\n$int = 123;\nvar_dump(is_int($int)); \n?>');
+                
+                editor.setValue("<?php\n$i = 1;\nswitch($i) {\n case 0: $i == 6;\n break;\n case 1: $i == 2;\n break;\n}\n echo $i;\n?>");
 
                 $(document).on('click','#run', function()
                 {
@@ -113,13 +113,48 @@
 
             });
 
+            $(document).ready(function() {
+                var editor = CodeMirror.fromTextArea(document.getElementById('editor1'), {
+                mode: "php",
+                theme: "dracula",
+                lineNumbers: true });
+                editor.setSize(700,200);
+                
+                editor.setValue("<?php\n?>");
+
+                $(document).on('click','#run1', function()
+                {
+                    var editorCode = editor.getValue();
+                    if(editorCode!= '') 
+                    {
+                        var editorCode = editor.getValue();
+                        $.ajax({
+                            type: "POST", 
+                            url: 'writeCode.php',
+                            data: {"input":editorCode},
+                            success:function(response) {},
+                            complete:function() {
+                                $.ajax({
+                                    url: 'readCode.php',
+                                    type: "GET",
+                                    success:function(response) {
+                                        $('#result1').html(response);
+                                    }
+                                })
+                            }
+                            })
+                        
+                    }
+                });
+
+            });
+
            
           
         </script>
     
            
        
-        <!--<form id="preview-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> -->
     
     </div>
     

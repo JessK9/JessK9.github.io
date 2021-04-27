@@ -1,6 +1,4 @@
 <?php
-$firstName = 'Mary';
-$lastName = 'Smith';
-echo $firstName;
-
+$i = 80;
+echo "hi";
 ?>
