@@ -95,13 +95,13 @@
                     if(editorCode!= '') 
                     {
                         var editorCode = editor.getValue();
-                        $.ajax({
+                        $.post({
                             type: "POST", 
                             url: 'writeCode.php',
                             data: {"input":editorCode},
                             success:function(response) {},
                             complete:function() {
-                                $.ajax({
+                                $.post({
                                     url: 'readCode.php',
                                     type: "GET",
                                     success:function(response) {
